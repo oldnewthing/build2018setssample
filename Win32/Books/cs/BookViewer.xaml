@@ -1,0 +1,133 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<Window x:Class="Books.BookViewer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Books"
+        mc:Ignorable="d"
+        Title="BookViewer"
+        Height="450"
+        Width="800"
+        SourceInitialized="Window_SourceInitialized"
+        Closed="Window_Closed">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource AppBrandingBackgroundThemeBrush}">
+            <TextBlock FontSize="24" Text="{Binding Book.Title}" Margin="10" Foreground="White"/>
+        </Border>
+        <FlowDocumentScrollViewer x:Name="ReaderElement" Grid.Row="1">
+            <FlowDocument>
+                <Paragraph>
+                    <Floater Width="300" HorizontalAlignment="Left" Margin="0,0,5,5">
+                        <BlockUIContainer>
+                            <Image Stretch="Uniform" Source="{Binding Book.ImageUri}"/>
+                        </BlockUIContainer>
+                    </Floater>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit,
+                    elementum varius eu nisl commodo efficitur magnis neque,
+                    senectus massa tempus venenatis morbi sodales.
+                    Rhoncus eros pulvinar massa elit orci porttitor sodales semper litora,
+                    habitasse sagittis ac suscipit malesuada ad tortor posuere erat,
+                    tempor dictum ante quis aptent habitant urna iaculis.
+                    Lacus malesuada praesent orci lacinia neque ac magna mi ultricies turpis,
+                    integer sit enim rhoncus mauris nam libero nec nostra cursus,
+                    maximus odio imperdiet suscipit tincidunt mus curae habitant finibus.
+                    Efficitur egestas pellentesque sit nunc et sociosqu litora,
+                    donec id accumsan conubia eros commodo cras odio,
+                    ullamcorper dignissim nibh hendrerit pulvinar porttitor.
+                </Paragraph>
+                <Paragraph>
+                    Risus senectus nibh efficitur molestie magnis at
+                    vitae volutpat ultricies ante pulvinar dolor taciti,
+                    gravida penatibus sapien tempor mauris.
+                    Nisl congue molestie egestas ut odio eu varius maecenas,
+                    dolor taciti tristique hac sagittis sodales nam fames arcu,
+                    vestibulum ultrices laoreet mollis habitasse dapibus consectetur.
+                    Bibendum laoreet placerat elit netus efficitur elementum a cras tempus,
+                    eu pharetra fermentum suspendisse iaculis dictumst morbi nulla.
+                    Lobortis quis pellentesque tempor dictum iaculis feugiat sociosqu ligula mi mattis,
+                    consectetur in auctor lectus adipiscing ut purus per laoreet,
+                    nostra ex nunc fames habitant non dui bibendum risus.
+                    Molestie conubia eu accumsan integer nam sapien convallis,
+                    tempus parturient etiam arcu tristique sociosqu magna lacinia,
+                    porta fringilla ad netus magnis mi.                    
+                </Paragraph>
+                <Paragraph>
+                    Suspendisse fames non curabitur pharetra pellentesque pulvinar nam,
+                    convallis eros primis curae nulla est,
+                    natoque viverra mi fringilla nisl integer.
+                    Sem semper feugiat sociosqu turpis habitant amet faucibus eros varius facilisi cursus,
+                    eget hendrerit maximus rhoncus egestas mattis orci convallis nascetur.
+                    Blandit tristique erat dictumst etiam penatibus neque scelerisque vitae ullamcorper,
+                    lectus eros rhoncus fames parturient tempus nibh lorem feugiat nostra,
+                    mauris mus porttitor maecenas nullam consectetur justo rutrum.
+                    Diam commodo nascetur massa pretium vestibulum imperdiet himenaeos nullam,
+                    class sed proin scelerisque lobortis nam aenean mus,
+                    curae ante luctus interdum aptent sodales ipsum.
+                    Posuere libero sodales curae fusce sapien dolor phasellus quis,
+                    donec maximus non felis tempus eget.
+                </Paragraph>
+                <Paragraph>
+                    Lorem ipsum dolor sit amet consectetur adipiscing elit,
+                    elementum varius eu nisl commodo efficitur magnis neque,
+                    senectus massa tempus venenatis morbi sodales.
+                    Rhoncus eros pulvinar massa elit orci porttitor sodales semper litora,
+                    habitasse sagittis ac suscipit malesuada ad tortor posuere erat,
+                    tempor dictum ante quis aptent habitant urna iaculis.
+                    Lacus malesuada praesent orci lacinia neque ac magna mi ultricies turpis,
+                    integer sit enim rhoncus mauris nam libero nec nostra cursus,
+                    maximus odio imperdiet suscipit tincidunt mus curae habitant finibus.
+                    Efficitur egestas pellentesque sit nunc et sociosqu litora,
+                    donec id accumsan conubia eros commodo cras odio,
+                    ullamcorper dignissim nibh hendrerit pulvinar porttitor.
+                </Paragraph>
+                <Paragraph>
+                    Risus senectus nibh efficitur molestie magnis at
+                    vitae volutpat ultricies ante pulvinar dolor taciti,
+                    gravida penatibus sapien tempor mauris.
+                    Nisl congue molestie egestas ut odio eu varius maecenas,
+                    dolor taciti tristique hac sagittis sodales nam fames arcu,
+                    vestibulum ultrices laoreet mollis habitasse dapibus consectetur.
+                    Bibendum laoreet placerat elit netus efficitur elementum a cras tempus,
+                    eu pharetra fermentum suspendisse iaculis dictumst morbi nulla.
+                    Lobortis quis pellentesque tempor dictum iaculis feugiat sociosqu ligula mi mattis,
+                    consectetur in auctor lectus adipiscing ut purus per laoreet,
+                    nostra ex nunc fames habitant non dui bibendum risus.
+                    Molestie conubia eu accumsan integer nam sapien convallis,
+                    tempus parturient etiam arcu tristique sociosqu magna lacinia,
+                    porta fringilla ad netus magnis mi.
+                </Paragraph>
+                <Paragraph>
+                    Suspendisse fames non curabitur pharetra pellentesque pulvinar nam,
+                    convallis eros primis curae nulla est,
+                    natoque viverra mi fringilla nisl integer.
+                    Sem semper feugiat sociosqu turpis habitant amet faucibus eros varius facilisi cursus,
+                    eget hendrerit maximus rhoncus egestas mattis orci convallis nascetur.
+                    Blandit tristique erat dictumst etiam penatibus neque scelerisque vitae ullamcorper,
+                    lectus eros rhoncus fames parturient tempus nibh lorem feugiat nostra,
+                    mauris mus porttitor maecenas nullam consectetur justo rutrum.
+                    Diam commodo nascetur massa pretium vestibulum imperdiet himenaeos nullam,
+                    class sed proin scelerisque lobortis nam aenean mus,
+                    curae ante luctus interdum aptent sodales ipsum.
+                    Posuere libero sodales curae fusce sapien dolor phasellus quis,
+                    donec maximus non felis tempus eget.
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Window>

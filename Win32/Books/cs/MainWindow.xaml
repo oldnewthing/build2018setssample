@@ -1,0 +1,75 @@
+﻿<!--
+//*********************************************************
+//
+// Copyright (c) Microsoft. All rights reserved.
+// This code is licensed under the MIT License (MIT).
+// THIS CODE IS PROVIDED *AS IS* WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY
+// IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR
+// PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.
+//
+//*********************************************************
+-->
+<Window x:Class="Books.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Books"
+        mc:Ignorable="d"
+        Title="Books"
+        SourceInitialized="Window_SourceInitialized"
+        Closed="Window_Closed"
+        Height="450" Width="800">
+
+    <Window.Resources>
+        <DataTemplate x:Key="BookItemTemplate">
+            <Grid Margin="10" Height="140" Width="340">
+                <Grid.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding ImageUri}" Opacity="0.5"/>
+                </Grid.Background>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="{Binding Title}" Margin="5" FontSize="24" TextWrapping="Wrap"/>
+                </Grid>
+            </Grid>
+        </DataTemplate>
+        <ContextMenu x:Key="SetsContextMenu">
+            <MenuItem Header="Open Notepad in new _tab" Click="OpenNotepadInNewTab"/>
+            <MenuItem Header="Open Notepad in new _window" Click="OpenNotepadInNewWindow"/>
+        </ContextMenu>
+        <ContextMenu x:Key="NoSetsContextMenu">
+            <MenuItem Header="_Open Notepad" Click="OpenNotepadInNewWindow"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Background="{StaticResource AppBrandingBackgroundThemeBrush}">
+            <TextBlock FontSize="20" Text="Library" Margin="10" Foreground="White"
+                   ContextMenu="{StaticResource SetsContextMenu}"
+                   ContextMenuOpening="Library_OnContextMenuOpening" />
+        </Border>
+        <ListView Grid.Row="1" ItemTemplate="{StaticResource BookItemTemplate}" ItemsSource="{Binding Books}">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Open in new _tab" Command="local:MainWindow.OpenInNewTab"/>
+                    <MenuItem Header="Open in new _window" Command="local:MainWindow.OpenInNewWindow"/>
+                </ContextMenu>
+            </ListView.ContextMenu>
+            <ListView.CommandBindings>
+                <CommandBinding Command="local:MainWindow.OpenInNewTab" Executed="OpenInNewTab_Executed"/>
+                <CommandBinding Command="local:MainWindow.OpenInNewWindow" Executed="OpenInNewWindow_Executed"/>
+            </ListView.CommandBindings>
+        </ListView>
+    </Grid>
+</Window>

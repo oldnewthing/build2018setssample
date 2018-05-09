@@ -1,0 +1,17 @@
+{
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "backgroundImage": "https://www.publicdomainpictures.net/pictures/250000/velka/passport-a-map-and-money.jpg",
+  "body": [
+    {
+      "type": "TextBlock",
+      "size": "large",
+      "weight": "bolder",
+      "text": "Trips Overview"
+    },
+    {
+      "type": "TextBlock",
+      "text": "2 trips"
+    }
+  ]
+}

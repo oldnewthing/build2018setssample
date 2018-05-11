@@ -18,7 +18,7 @@ to build and run.
 * UWP\Trips\cs\Trips.sln: Solution file for a UWP C# application.
     See the [README](UWP/Trips/cs/README.md) for more information.
 * Win32\Books\Books.sln: Solution file for a Win32 C# application.
-    See the [README](Win32/Books/cs/README.md) for more information.
+    See the [README](Win32/Books/README.md) for more information.
 
 # Other resources
 
